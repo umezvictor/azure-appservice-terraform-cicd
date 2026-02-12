@@ -73,7 +73,7 @@ locals {
 resource "azurerm_mssql_server" "server" {
   name                         = random_pet.azurerm_mssql_server_name.id
   resource_group_name          = azurerm_resource_group.rg.name
-  location                     = azurerm_resource_group.rg.location
+  location                     = "North Europe" #azurerm_resource_group.rg.location
   administrator_login          = var.admin_username
   administrator_login_password = local.admin_password
   version                      = "12.0"
